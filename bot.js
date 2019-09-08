@@ -35,15 +35,21 @@ db.once('open', () => {
     console.log('Mongoose: Connected');
 });
 
+const FACEBOOK_APPID='453645938566986';
+const FACEBOOK_APP_SECRET = '84715e00c5c16b05cb5038299422faf5';
+const FACEBOOK_ACCESS_TOKEN='EAAGclq0Fp0oBALETQBYAIsQMkPS5pZBbXQGn8g634sJ76pYYZCDCeFTkMk22ZAU0nGiBZC01g8f6ytq4PYZAOv3sEVot8pbjhZAFZAZAmyAUWzuAU4ehKlNa4biVOoo9BtRyFu0sQYLYcDL8P8tZAJvxSldZCxAJlqrMnYiZC4i2A86L62vmo1iEJDMOnAq3Tmkl5kZD';
+const FACEBOOK_VERIFY_TOKEN='shopik';
+
+
 
 const adapter = new FacebookAdapter({
 
     // REMOVE THIS OPTION AFTER YOU HAVE CONFIGURED YOUR APP!
     // enable_incomplete: true,
 
-    verify_token: process.env.FACEBOOK_VERIFY_TOKEN,
-    access_token: process.env.FACEBOOK_ACCESS_TOKEN,
-    app_secret: process.env.FACEBOOK_APP_SECRET,
+    verify_token: FACEBOOK_VERIFY_TOKEN,
+    access_token: FACEBOOK_ACCESS_TOKEN,
+    app_secret: FACEBOOK_APP_SECRET,
 })
 
 // emit events based on the type of facebook event being received
