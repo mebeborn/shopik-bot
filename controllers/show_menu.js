@@ -1,6 +1,6 @@
 module.exports = function (controller) {
 
-  controller.hears(['Menu', 'Cancel'], ['message', 'direct_message', 'facebook_postback'], async (bot, message) => {
+  controller.hears(['Menu', 'Cancel'], 'message', async (bot, message) => {
     await bot.reply(message, {
       text: 'Menu',
       quick_replies: [
