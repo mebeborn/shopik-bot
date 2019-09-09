@@ -21,7 +21,7 @@ module.exports = function (controller) {
           const botWorker = await controller.spawn(message.postback.referral.ref);
           await botWorker.startConversationWithUser(message.postback.referral.ref);
           await botWorker.say('Link is activated!');
-          await bot.reply(message, { text: 'Activated!' });
+          await bot.reply(message, { text: 'Tou have a new referral!' });
         }
       }
     } catch (error) {
