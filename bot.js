@@ -26,7 +26,7 @@ let storage = null;
 //     });
 // }
 
-mongoose.connect('mongodb+srv://dplscode:ponik111@botkit-otokq.mongodb.net/BotKit?retryWrites=true&w=majority', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
 const db = mongoose.connection;
 

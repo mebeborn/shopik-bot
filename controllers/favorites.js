@@ -29,7 +29,7 @@ module.exports = function (controller) {
         });
       } else {
         bot.reply(message, {
-          text: 'Favorile list is empty.',
+          text: 'Favorite list is empty.',
           quick_replies: [
             {
               content_type: 'text',

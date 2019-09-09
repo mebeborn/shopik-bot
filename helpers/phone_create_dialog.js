@@ -3,7 +3,7 @@ const { BotkitConversation } = require('botkit');
 const createDialog = (id, controller) => {
   const convo = new BotkitConversation(id, controller);
 
-  convo.ask('ZIP code', async (answer, convo, bot) => {
+  convo.ask('Please, enter your ZIP code.', async (answer, convo, bot) => {
     zipCode = answer;
 
     await bot.say({

@@ -23,7 +23,6 @@ module.exports = function (controller) {
           { userID: message.sender.id, succeeded: false },
           { succeeded: true, isFree: isFree },
         );
-        bot.reply(message, 'Congratulations! Our courier will contact you!');
         bot.reply(message, {
           text: 'Congratulations! Our courier will contact you!',
           quick_replies: [
