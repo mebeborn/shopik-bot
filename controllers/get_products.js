@@ -15,9 +15,8 @@ module.exports = function (controller) {
           },
         });
       })
-      .catch(async (error) => {
-        console.log(error);
-        await bot.reply(message, 'Something went wrong');
+      .catch(error => {
+        bot.reply(message, 'Something went wrong');
       })
   });
 }

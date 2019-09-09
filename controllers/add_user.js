@@ -21,11 +21,11 @@ module.exports = function (controller) {
           const botWorker = await controller.spawn(message.postback.referral.ref);
           await botWorker.startConversationWithUser(message.postback.referral.ref);
           await botWorker.say('Link is activated!');
-          await bot.reply(message, { text: 'Tou have a new referral!' });
+          bot.reply(message, { text: 'Tou have a new referral!' });
         }
       }
     } catch (error) {
-      await bot.reply(message, { text: 'Ooops... Something went wrong.' });
+      bot.reply(message, { text: 'Ooops... Something went wrong.' });
     }
     await bot.reply(message, {
       text: 'Menu',
