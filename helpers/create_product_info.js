@@ -1,4 +1,4 @@
-createProduct = (data, user) => {
+const createProduct = (data, user) => {
   const buttonURL = {
     type: 'web_url',
     url: data.products[0].url,
@@ -36,6 +36,6 @@ createProduct = (data, user) => {
     subtitle: data.products[0].shortDescription,
     buttons,
   };
-}
+};
 
 module.exports = createProduct;

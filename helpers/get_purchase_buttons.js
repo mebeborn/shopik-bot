@@ -1,4 +1,4 @@
-createPurchaseButtons = data => {
+const createPurchaseButtons = (data) => {
   const buttonURL = {
     type: 'web_url',
     url: data.products[0].url,
@@ -20,6 +20,6 @@ createPurchaseButtons = data => {
     subtitle: data.products[0].shortDescription,
     buttons,
   };
-}
+};
 
 module.exports = createPurchaseButtons;

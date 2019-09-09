@@ -1,8 +1,8 @@
-getItems = data => {
+const getItems = (data) => {
   const items = [];
 
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < data.products.length; i++) {
-
     const button = {
       type: 'postback',
       title: 'Info',
@@ -20,7 +20,6 @@ getItems = data => {
     items.push(item);
   }
   return items;
-
-}
+};
 
 module.exports = getItems;

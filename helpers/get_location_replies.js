@@ -1,5 +1,5 @@
-getReplies = (counter) => {
-  if (counter >=2 ) {
+const getReplies = (counter) => {
+  if (counter >= 2) {
     return [
       {
         content_type: 'text',
@@ -30,7 +30,6 @@ getReplies = (counter) => {
       payload: 'Cancel',
     },
   ];
-
-}
+};
 
 module.exports = getReplies;

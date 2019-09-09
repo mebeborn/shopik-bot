@@ -1,13 +1,12 @@
-createSkuQuery = skus => {
-  const skuArr = skus.map(sku => `sku=${sku}`);
+const createSkuQuery = (skus) => {
+  const skuArr = skus.map((sku) => `sku=${sku}`);
   return skuArr.join('|');
-}
+};
 
-getItems = data => {
+const getItems = (data) => {
   const items = [];
 
   for (let i = 0; i < data.products.length; i++) {
-
     const button = {
       type: 'postback',
       title: 'Info',
@@ -26,7 +25,7 @@ getItems = data => {
   }
 
   return items;
-}
+};
 
 
-module.exports = {createSkuQuery, getItems};
+module.exports = { createSkuQuery, getItems };
