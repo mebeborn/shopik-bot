@@ -1,5 +1,5 @@
 const Purchase = require('../models/Purchase');
-const getProduct = require('../best_buy/bby_get');
+const { getProduct } = require('../best_buy/bby_get');
 const createPurchaseButtons = require('../helpers/get_purchase_buttons');
 
 module.exports = function (controller) { 
@@ -26,6 +26,8 @@ module.exports = function (controller) {
         });
       });
     } catch (error) {
+      console.log(error);
+
       bot.reply(message, { text: 'Oooops. Try again later.' });
     }
   });
