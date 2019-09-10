@@ -1,6 +1,6 @@
 const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 const getItems = require('../helpers/get_products');
-const getProducts = require('../best_buy/get_products');
+const { getProducts } = require('../best_buy/bby_get');
 
 module.exports = function (controller) {
   controller.hears('Shop', ['message', 'facebook_postback'], async (bot, message) => {

@@ -1,8 +1,8 @@
 const Purchase = require('../models/Purchase');
-const getProduct = require('../best_buy/get_product');
+const getProduct = require('../best_buy/bby_get');
 const createPurchaseButtons = require('../helpers/get_purchase_buttons');
-module.exports = function (controller) {
- 
+
+module.exports = function (controller) { 
   controller.hears(async message => message.text && message.text.includes('PURCHASE_'), 'facebook_postback', async (bot, message) => {
     const id = message.text.slice(9, message.text.length);
     try {

@@ -1,10 +1,8 @@
-
 const User = require('../models/User');
 const { getItems } = require('../helpers/favorites');
-const getFavorites = require('../best_buy/get_favorites');
+const { getFavorites } = require('../best_buy/bby_get');
 
 module.exports = function (controller) {
-
   controller.hears('Favorites', 'message', async (bot, message) => {
     try {
       const user = await User.findOne({ id: message.sender.id });
