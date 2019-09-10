@@ -1,7 +1,7 @@
 
-const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 const User = require('../models/User');
-const { getItems, createSkuQuery } = require('../helpers/favorites');
+const { getItems } = require('../helpers/favorites');
+const getFavorites = require('../best_buy/get_favorites');
 
 module.exports = function (controller) {
 
@@ -9,7 +9,7 @@ module.exports = function (controller) {
     try {
       const user = await User.findOne({ id: message.sender.id });
       if (user.favoriteProducts.length !== 0) {
-        await bby.products(createSkuQuery(user.favoriteProducts), { show: 'sku,name,salePrice,image,url,shortDescription' }).then(async (data) => {
+        await getFavorites(user.favoriteProducts).then((data) => {
           bot.reply(message, {
             attachment: {
               type: 'template',

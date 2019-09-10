@@ -1,5 +1,5 @@
-const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 const Purchase = require('../models/Purchase');
+const getProduct = require('../best_buy/get_product');
 const createPurchaseButtons = require('../helpers/get_purchase_buttons');
 module.exports = function (controller) {
  
@@ -7,7 +7,7 @@ module.exports = function (controller) {
     const id = message.text.slice(9, message.text.length);
     try {
       const purchase = await Purchase.findById(id);
-      await bby.products(`sku=${purchase.sku}`, { show: 'sku,name,salePrice,image,url,shortDescription' }).then(async (data) => {
+      await getProduct(purchase.sku).then((data) => {
         bot.reply(message, {
           attachment: {
             type: 'template',

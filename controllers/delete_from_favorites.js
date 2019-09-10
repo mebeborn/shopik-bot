@@ -12,6 +12,13 @@ module.exports = function (controller) {
     } catch (error) {
       bot.reply(message, { text: 'Oooopps. Try again later.' });
     }
-    bot.reply(message, { text: 'Product successfully deleted from favorites.' });
+    bot.reply(message, {
+      text: 'Product successfully deleted from favorites.',
+      quick_replies: [{
+        content_type: 'text',
+        title: 'Menu',
+        payload: 'Menu',
+      }]
+    });
   });
 };
