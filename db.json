@@ -13,6 +13,11 @@
     {  "id": 3,
       "title": "Third post",
       "decription": "description"
+    },
+     {
+      "id": null,
+      "title": undefined,
+      "decription": "description"
     }
   ],
   "profile": {
